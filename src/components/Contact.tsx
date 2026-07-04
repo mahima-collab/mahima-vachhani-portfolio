@@ -48,7 +48,7 @@ export function Contact() {
           </a>
           <a
             href={personal.resumeUrl}
-            download="Rahul_Gautam_Resume.pdf"
+            download="Mahima_Vachhani_Resume.pdf"
             className="glass-card contact-card flex items-center justify-between p-4 text-sm"
           >
             Resume

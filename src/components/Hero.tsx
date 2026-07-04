@@ -74,7 +74,7 @@ export function Hero() {
                 </a>
                 <a
                   href={personal.resumeUrl}
-                  download="Rahul_Gautam_Resume.pdf"
+                  download="Mahima_Vachhani_Resume.pdf"
                   className="inline-flex items-center gap-1.5 link-subtle underline underline-offset-4"
                 >
                   <Download size={14} />

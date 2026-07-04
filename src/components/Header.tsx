@@ -77,7 +77,7 @@ export function Header() {
           </a>
           <a
             href={personal.resumeUrl}
-            download="Rahul_Gautam_Resume.pdf"
+            download="Mahima_Vachhani_Resume.pdf"
             className="hidden items-center gap-1.5 text-sm text-muted transition-colors hover:text-accent sm:flex"
           >
             <Download size={14} />
