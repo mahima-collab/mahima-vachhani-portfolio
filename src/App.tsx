@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="portfolio-enter">
       <PageBackground />
-      <div className="open-banner">Open to opportunities · DevOps & Cloud · Vadodara & remote</div>
+      <div className="open-banner">Open to opportunities · DevOps & Cloud · Bengaluru & remote</div>
       <Header />
       <main id="main-content">
         <Hero />

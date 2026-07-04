@@ -197,7 +197,6 @@ export const experience = [
 export const languages = [
   { name: "English", level: "Professional" },
   { name: "Hindi", level: "Native" },
-  { name: "Gujarati", level: "Native" },
 ];
 
 export const education = [
