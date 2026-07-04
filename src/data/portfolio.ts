@@ -47,6 +47,13 @@ export const domains = [
   "WAF, CDN & reliability engineering",
 ];
 
+export const skillCategories = [
+  { name: "Cloud", skills: ["AWS", "Microsoft Azure", "EC2", "VPC", "EKS", "Amazon ECS"] },
+  { name: "CI/CD & IaC", skills: ["Jenkins", "Terraform", "Docker", "Kubernetes", "Nginx"] },
+  { name: "Observability", skills: ["Prometheus", "Grafana", "ELK Stack", "Valkey", "ElastiCache"] },
+  { name: "Edge & Scripting", skills: ["Cloudflare", "Akamai", "Bash", "Python"] },
+];
+
 export const navLinks = [
   { label: "Work", href: "#work" },
   { label: "Why me", href: "#why-me" },

@@ -3,10 +3,8 @@ import { PageBackground } from "./components/PageBackground";
 import { BizCard } from "./components/BizCard";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { Domains } from "./components/Domains";
 import { Work } from "./components/Work";
 import { SkillsBand } from "./components/SkillsBand";
-import { Credentials } from "./components/Credentials";
 import { WhyMe } from "./components/WhyMe";
 import { Offers } from "./components/Offers";
 import { Experience } from "./components/Experience";
@@ -28,14 +26,12 @@ function App() {
   return (
     <div className="portfolio-enter">
       <PageBackground />
-      <div className="open-banner">Open to opportunities · DevOps & Cloud roles · Vadodara & remote</div>
+      <div className="open-banner">Open to opportunities · DevOps & Cloud · Vadodara & remote</div>
       <Header />
-      <main id="main-content" className="pt-8">
+      <main id="main-content">
         <Hero />
-        <Domains />
         <Work />
         <SkillsBand />
-        <Credentials />
         <WhyMe />
         <Offers />
         <Experience />

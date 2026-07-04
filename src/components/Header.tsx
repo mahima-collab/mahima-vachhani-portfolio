@@ -13,7 +13,7 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const ids = navLinks.map((l) => l.href.slice(1));
+    const ids = ["top", ...navLinks.map((l) => l.href.slice(1))];
     const observers: IntersectionObserver[] = [];
 
     ids.forEach((id) => {
@@ -33,59 +33,51 @@ export function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-7 z-50 transition-all duration-200 ${
-        scrolled
-          ? "border-b border-[#1e2a3d] bg-[#0b1120]/90 backdrop-blur-md"
-          : ""
-      }`}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold">
-          <span className="avatar flex h-8 w-8 text-xs">{personal.initials}</span>
-          <span className="hidden sm:inline">{personal.name.split(" ")[0]}</span>
-        </a>
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+      <div className="container">
+        <div className="header-inner">
+          <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold">
+            <span className="avatar flex h-8 w-8 text-xs">{personal.initials}</span>
+            <span className="hidden sm:inline">{personal.name.split(" ")[0]}</span>
+          </a>
 
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((link) => {
-            const id = link.href.slice(1);
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`text-sm transition-colors ${
-                  activeSection === id
-                    ? "font-semibold text-accent"
-                    : "text-muted hover:text-[#f1f5f9]"
-                }`}
-              >
-                {link.label}
-              </a>
-            );
-          })}
-        </nav>
+          <nav className="hidden items-center gap-7 lg:flex">
+            {navLinks.map((link) => {
+              const id = link.href.slice(1);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link ${activeSection === id ? "is-active" : ""}`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
 
-        <div className="flex items-center gap-3">
-          <a
-            href={personal.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-1.5 text-sm text-muted transition-colors hover:text-accent sm:flex"
-          >
-            <ExternalLink size={14} />
-            LinkedIn
-          </a>
-          <a
-            href={personal.resumeUrl}
-            download="Mahima_Vachhani_Resume.pdf"
-            className="hidden items-center gap-1.5 text-sm text-muted transition-colors hover:text-accent sm:flex"
-          >
-            <Download size={14} />
-            Resume
-          </a>
-          <a href="#contact" className="btn-primary !py-2 !px-4 !text-sm">
-            Let's talk
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover hidden p-2 sm:block"
+              aria-label="LinkedIn"
+            >
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href={personal.resumeUrl}
+              download="Mahima_Vachhani_Resume.pdf"
+              className="link-hover hidden p-2 sm:block"
+              aria-label="Resume"
+            >
+              <Download size={16} />
+            </a>
+            <a href="#contact" className="btn btn-primary btn-sm">
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </header>

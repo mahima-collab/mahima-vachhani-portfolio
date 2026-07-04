@@ -1,30 +1,31 @@
-import { education, languages, personal } from "../data/portfolio";
+import { education, experience, languages, personal } from "../data/portfolio";
 
 export function About() {
   return (
-    <section id="about" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
-        <span className="section-label">About</span>
-        <h2 className="section-title">About me</h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted">
-          {personal.summary}
-        </p>
+    <section id="about" className="section section-shade-teal">
+      <div className="container">
+        <div className="section-head">
+          <span className="section-eyebrow">About</span>
+          <h2 className="section-title">A bit about me</h2>
+        </div>
+
+        <p className="max-w-3xl text-lg leading-relaxed text-muted">{personal.summary}</p>
         <p className="mt-4 max-w-3xl text-sm text-dim">
-          {personal.totalExperience} ({personal.experiencePeriod}) across tax compliance,
-          fraud prevention, e-commerce, and field service. FSE III Accredited · B.E. Computer Science.
+          {personal.totalExperience} ({personal.experiencePeriod}) specializing in AWS, Azure,
+          CI/CD, observability, and cloud reliability engineering.
         </p>
 
-        <div className="experience-highlight">
+        <div className="highlight-box">
           <p className="highlight-value">{personal.totalExperience}</p>
           <div>
-            <p className="text-sm font-medium">Total professional experience</p>
+            <p className="text-sm font-semibold">Professional experience</p>
             <p className="text-xs text-dim">{personal.experiencePeriod}</p>
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-3">
-          <div className="glass-card p-6">
-            <h3 className="mb-4 text-sm font-medium">Languages</h3>
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          <div className="card card-padded">
+            <h3 className="mb-4 text-sm font-bold">Languages</h3>
             <ul className="space-y-2">
               {languages.map((lang) => (
                 <li key={lang.name} className="text-sm text-muted">
@@ -34,22 +35,23 @@ export function About() {
             </ul>
           </div>
 
-          <div className="glass-card p-6">
-            <h3 className="mb-4 text-sm font-medium">Now</h3>
+          <div className="card card-padded">
+            <h3 className="mb-4 text-sm font-bold">Currently</h3>
             <p className="text-sm text-muted">
-              Senior Software Engineer @ Wipro Limited
+              {experience[0].role}
             </p>
-            <p className="mt-1 text-xs text-dim">{personal.availabilityDetail}</p>
+            <p className="mt-1 text-sm text-accent">{experience[0].company}</p>
+            <p className="mt-2 text-xs text-dim">{personal.availabilityDetail}</p>
           </div>
 
-          <div className="glass-card p-6">
-            <h3 className="mb-4 text-sm font-medium">Education</h3>
+          <div className="card card-padded">
+            <h3 className="mb-4 text-sm font-bold">Education</h3>
             <ul className="space-y-3">
               {education.map((item) => (
                 <li key={item.degree} className="text-sm text-muted">
-                  <span className="text-[#e6edf3]">{item.degree}</span>
+                  <span className="font-semibold">{item.degree}</span>
                   <br />
-                  {item.institution} · {item.year}
+                  {item.institution}
                 </li>
               ))}
             </ul>

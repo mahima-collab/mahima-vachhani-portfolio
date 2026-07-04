@@ -1,17 +1,26 @@
-import { skills } from "../data/portfolio";
+import { skillCategories } from "../data/portfolio";
 
 export function SkillsBand() {
   return (
-    <section aria-label="What I bring to your stack" className="section-band px-6 py-10">
-      <div className="mx-auto max-w-6xl">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-dim">
-          What I bring to your stack
-        </p>
-        <div className="skills-scroll">
-          {skills.map((skill) => (
-            <span key={skill} className="skill-chip">
-              {skill}
-            </span>
+    <section aria-label="Technical skills" className="section section-band">
+      <div className="container">
+        <div className="section-head">
+          <span className="section-eyebrow">Tech stack</span>
+          <h2 className="section-title">Tools & technologies</h2>
+        </div>
+
+        <div className="skills-grid">
+          {skillCategories.map((group) => (
+            <div key={group.name} className="card card-padded">
+              <p className="skill-group-title">{group.name}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {group.skills.map((skill) => (
+                  <span key={skill} className="tech-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
